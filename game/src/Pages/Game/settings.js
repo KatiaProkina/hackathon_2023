@@ -1,4 +1,4 @@
-const setting = [
+const settings = [
     {
       name: "easy",
       cells: 6,

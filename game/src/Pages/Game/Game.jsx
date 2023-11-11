@@ -55,7 +55,7 @@ function Game() {
     setTimeout(() => {
       newHoles[randomIndex] = null;
       setHoles(newHoles);
-    }, 1000);
+    }, 1000); 
   };
 
   if (time >= 0) {
