@@ -1,17 +1,14 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import FinishPage from "../FinishPage/FinishPage";
-import {useNavigate} from 'react-router-dom';
+import { useNavigate } from "react-router-dom";
 
 import "./styles.css";
 import { getRandomFear } from "./Fears";
 
 function Game() {
-
-
   const navigate = useNavigate();
-  const onTimeOut = () => navigate('/finish')
-  const onStartPage = () => navigate('/')
-
+  const onTimeOut = () => navigate("/finish");
+  const onStartPage = () => navigate("/");
 
   //настройки сложности (вынесутся в отдельный файл)
   // кол-во ячеек (кратно 3м)
@@ -112,20 +109,16 @@ function Game() {
             <button className="resetBtn" onClick={resetGame}>
               Начать заново
             </button>
-            <button className="resetBtn" onClick={onStartPage} >На главную</button>
+            <button className="resetBtn" onClick={onStartPage}>
+              На главную
+            </button>
           </div>
         </div>
       </div>
     );
   } else {
-    onTimeOut()
-    return (
-      <>
-        <FinishPage score={score}></FinishPage>
-      </>
-    );
+    onTimeOut();
   }
 }
 
 export default Game;
-  

@@ -3,11 +3,10 @@ import "../FinishPage/FinishPage.css";
 import { useNavigate } from "react-router-dom";
 
 const FinishPage = (props) => {
-
   const navigate = useNavigate();
-  const onClickHandler = () => navigate('/game')
+  const onClickHandler = () => navigate("/game");
 
-
+  console.log(props.score);
   return (
     <div className="container-finish">
       <div className="scores">Твои очки: {props.score}</div>
