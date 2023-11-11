@@ -70,32 +70,50 @@ function Game() {
 
   if (time > 0) {
     return (
-      <div className="game-container">
-        <h1>Fight with your fear</h1>
-        <h2>Твои очки: {score}</h2>
-        <h2>Time: {time}s</h2>
-        <div className="game-area">
-          <div className="game-grid">
-            {holes.map((fear, index) => (
-              <div
-                key={index}
-                className={`hole ${fear ? "active" : ""}`}
-                onClick={() => tapHole(index)}
-              >
-                {fear && <img src={fear.src} alt={fear.alt} className="fear" />}
-              </div>
-            ))}
+      <div id="axis">
+        <div className="game-container">
+          <img
+            src="../../../public/oblako.png"
+            alt=""
+            className="object van1 move-right"
+          />
+          <img
+            src="../../../public/oblako.png"
+            alt=""
+            className="object van2 move-left"
+          />
+
+          <div className="game-area">
+            <div className="game-grid">
+              {holes.map((fear, index) => (
+                <div
+                  key={index}
+                  className={`hole ${fear ? "active" : ""}`}
+                  onClick={() => tapHole(index)}
+                >
+                  {fear && (
+                    <img src={fear.src} alt={fear.alt} className="fear" />
+                  )}
+                </div>
+              ))}
+            </div>
+          </div>
+          <div className="scores-time-block">
+            <h2>Твои очки: {score}</h2>
+            <h2>Time: {time}s</h2>
+            <button className="resetBtn" onClick={resetGame}>
+              Начать заново
+            </button>
           </div>
         </div>
-        <button onClick={resetGame}>Начать заново</button>
       </div>
     );
   } else {
     return (
-    <>
-    <FinishPage score={score}></FinishPage>
-    </>
-    )
+      <>
+        <FinishPage score={score}></FinishPage>
+      </>
+    );
   }
 }
 

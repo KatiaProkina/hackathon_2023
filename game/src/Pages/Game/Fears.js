@@ -1,24 +1,27 @@
 import React from "react";
+import scare1 from "../../../public/scared_ghost.png";
+import scare2 from "../../../public/scare-robot.png";
+import scare3 from "../../../public/scare-bones-man.png";
 
 const fears = [
   {
     name: "1",
-    src: "source1", // Замени 'source1' на фактический путь к изображению
+    src: scare1, // Замени 'source1' на фактический путь к изображению
     alt: "страх",
-    points: 1
+    points: 1,
   },
   {
     name: "2",
-    src: "source2", // Замени 'source2' на фактический путь к изображению
+    src: scare2, // Замени 'source2' на фактический путь к изображению
     alt: "ужас",
-    points: 2
+    points: 2,
   },
   {
     name: "3",
-    src: "source3", // Замени 'source3' на фактический путь к изображению
+    src: scare3, // Замени 'source3' на фактический путь к изображению
     alt: "кошмар",
-    points: 3
-  }
+    points: 3,
+  },
 ];
 
 export function getRandomFear() {
