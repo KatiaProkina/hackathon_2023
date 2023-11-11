@@ -2,6 +2,9 @@ import React from "react";
 import scare1 from "../../../public/scared_ghost.png";
 import scare2 from "../../../public/scare-robot.png";
 import scare3 from "../../../public/scare-bones-man.png";
+import scare4 from "../../../public/scare-shark.png";
+import scare5 from "../../../public/scare-warrior.png";
+import scare6 from "../../../public/scare-witch.png";
 
 const fears = [
   {
@@ -19,6 +22,30 @@ const fears = [
   {
     name: "3",
     src: scare3, // Замени 'source3' на фактический путь к изображению
+    alt: "кошмар",
+    points: 3,
+  },
+  {
+    name: "4",
+    src: scare3, // Замени 'source3' на фактический путь к изображению
+    alt: "кошмар",
+    points: 3,
+  },
+  {
+    name: "4",
+    src: scare4, // Замени 'source3' на фактический путь к изображению
+    alt: "кошмар",
+    points: 3,
+  },
+  {
+    name: "5",
+    src: scare5, // Замени 'source3' на фактический путь к изображению
+    alt: "кошмар",
+    points: 3,
+  },
+  {
+    name: "6",
+    src: scare6, // Замени 'source3' на фактический путь к изображению
     alt: "кошмар",
     points: 3,
   },

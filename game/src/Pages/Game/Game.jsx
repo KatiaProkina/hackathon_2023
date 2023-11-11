@@ -73,12 +73,12 @@ function Game() {
       <div id="axis">
         <div className="game-container">
           <img
-            src="../../../public/oblako.png"
+            src="../../../public/grey-cloud.png"
             alt=""
             className="object van1 move-right"
           />
           <img
-            src="../../../public/oblako.png"
+            src="../../../public/grey-cloud.png"
             alt=""
             className="object van2 move-left"
           />

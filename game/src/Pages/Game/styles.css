@@ -83,11 +83,15 @@
   -webkit-transition: all 2s ease-in-out; /** Chrome & Safari **/
 }
 .van1 {
-  top: -3%;
+  width: 800px;
+  height: 750px;
+  top: -13%;
   left: -3%;
 }
 .van2 {
-  top: -3%;
+  width: 800px;
+  height: 750px;
+  top: -13%;
   right: -3%;
 }
 #axis:hover .move-right {
