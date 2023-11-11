@@ -1,0 +1,84 @@
+body {
+  margin: 0px;
+}
+:root {
+  font-family: "Manrope", sans-serif;
+  background: -webkit-linear-gradient(
+    45deg,
+    rgb(197, 154, 207) 46%,
+    rgb(164, 224, 246) 80%
+  );
+  font-family: "Manrope", sans-serif;
+}
+.container {
+  position: relative;
+  display: flex;
+  height: 100vh;
+  flex-direction: column;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+}
+.title-block {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  color: white;
+  max-width: 500px;
+}
+h1 {
+  font-size: 46px;
+}
+.title-description-game-block {
+  font-size: 30px;
+}
+.start-game-btn {
+  color: white;
+  background-color: rgb(164, 224, 246);
+  border: none;
+  border-radius: 6px;
+  padding: 15px 35px;
+  font-size: 25px;
+}
+.icon1 {
+  position: absolute;
+  height: 300px;
+  width: 280px;
+  left: -270px;
+  /* top: 300px; */
+  /* left: 300px; */
+}
+/* .icon2 {
+  position: absolute;
+  height: 50px;
+  width: 50px;
+} */
+.icon3 {
+  position: absolute;
+  height: 80px;
+  width: 80px;
+  left: 500px;
+}
+.icon4 {
+  position: absolute;
+  height: 50px;
+  width: 50px;
+  height: 80px;
+  width: 80px;
+  top: 330px;
+  left: 360px;
+}
+.rainbow {
+  position: absolute;
+  top: 20px;
+}
+.oblako1 {
+  position: absolute;
+  top: -10px;
+  left: 10px;
+}
+.oblako2 {
+  position: absolute;
+  top: -10px;
+  right: 10px;
+}
