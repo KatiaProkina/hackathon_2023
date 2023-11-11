@@ -3,21 +3,21 @@ body {
 }
 :root {
   font-family: "Manrope", sans-serif;
-  background: -webkit-linear-gradient(
-    45deg,
-    rgb(197, 154, 207) 46%,
-    rgb(164, 224, 246) 80%
-  );
-  font-family: "Manrope", sans-serif;
 }
 .container {
   position: relative;
   display: flex;
   height: 100vh;
+  min-width: 1800px;
   flex-direction: column;
   gap: 20px;
   justify-content: center;
   align-items: center;
+  background: -webkit-linear-gradient(
+    45deg,
+    rgb(197, 154, 207) 46%,
+    rgb(164, 224, 246) 80%
+  );
 }
 .title-block {
   position: relative;
@@ -26,8 +26,9 @@ body {
   color: white;
   max-width: 500px;
 }
-h1 {
+.name-game {
   font-size: 46px;
+  padding-bottom: 20px;
 }
 .title-description-game-block {
   font-size: 30px;
@@ -66,7 +67,7 @@ h1 {
   width: 50px;
   height: 80px;
   width: 80px;
-  top: 330px;
+  top: 300px;
   left: 360px;
 }
 .rainbow {
