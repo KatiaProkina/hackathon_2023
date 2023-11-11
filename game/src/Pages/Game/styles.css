@@ -1,12 +1,13 @@
 /* src/App.css */
-body {
+.game-container {
+  position: relative;
   display: flex;
   align-items: center;
+  flex-direction: column;
   justify-content: center;
-  height: 100vh;
+  height: 130vh;
   margin: 0;
-  background-color: #f0f0f0;
-  font-family: "Arial", sans-serif;
+  background: linear-gradient(45deg, rgb(29, 30, 84) 46%, rgb(38, 64, 105) 80%);
 }
 
 .game-container {
@@ -41,4 +42,30 @@ body {
   background-color: red;
   padding: 20px;
   transition: all 0.5s ease-in-out;
+}
+.title-game {
+  font-size: 48px;
+  margin: 0;
+}
+.object {
+  position: absolute;
+  position: absolute;
+  transition: all 2s ease-in-out;
+  -webkit-transition: all 2s ease-in-out; /** Chrome & Safari **/
+}
+.van1 {
+  top: -3%;
+  left: -3%;
+}
+.van2 {
+  top: -3%;
+  right: -3%;
+}
+#axis:hover .move-right {
+  transform: translate(350px, 0);
+  -webkit-transform: translate(350px, 0);
+}
+#axis:hover .move-left {
+  transform: translate(-350px, 0);
+  -webkit-transform: translate(-350px, 0); /** Safari & Chrome **/
 }

@@ -56,7 +56,7 @@ function Game() {
     setTimeout(() => {
       newHoles[randomIndex] = null;
       setHoles(newHoles);
-    }, 1000); 
+    }, 1000);
   };
 
   // const deleteResult = () => {
@@ -76,7 +76,7 @@ function Game() {
           alt=""
           className="object van2 move-left"
         />
-        <h1>Победи свой страх!</h1>
+        <h1 className="title-game">Победи свой страх!</h1>
         <h2>Твои очки: {score}</h2>
         <h2>Time: {time}s</h2>
         <div className="game-area">
