@@ -33,6 +33,7 @@ h1 {
   font-size: 30px;
 }
 .start-game-btn {
+  position: relative;
   color: white;
   background-color: rgb(164, 224, 246);
   border: none;
