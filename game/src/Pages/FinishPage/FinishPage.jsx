@@ -1,13 +1,12 @@
 import React from "react";
 import "../FinishPage/FinishPage.css";
-import Game from "../Game/Game";
+import { useNavigate } from "react-router-dom";
 
 const FinishPage = (props) => {
 
-  const onClickHandler = () => {
-    return <Game></Game>
+  const navigate = useNavigate();
+  const onClickHandler = () => navigate('/game')
 
-  }
 
   return (
     <div className="container-finish">

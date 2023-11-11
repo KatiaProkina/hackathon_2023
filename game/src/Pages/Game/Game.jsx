@@ -1,10 +1,18 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import FinishPage from "../FinishPage/FinishPage";
+import {useNavigate} from 'react-router-dom';
 
 import "./styles.css";
 import { getRandomFear } from "./Fears";
 
 function Game() {
+
+
+  const navigate = useNavigate();
+  const onTimeOut = () => navigate('/finish')
+  const onStartPage = () => navigate('/')
+
+
   //настройки сложности (вынесутся в отдельный файл)
   // кол-во ячеек (кратно 3м)
   const CELLS = 9;
@@ -73,12 +81,12 @@ function Game() {
       <div id="axis">
         <div className="game-container">
           <img
-            src="../../../public/grey-cloud.png"
+            src="../../../public/oblako.png"
             alt=""
             className="object van1 move-right"
           />
           <img
-            src="../../../public/grey-cloud.png"
+            src="../../../public/oblako.png"
             alt=""
             className="object van2 move-left"
           />
@@ -104,11 +112,13 @@ function Game() {
             <button className="resetBtn" onClick={resetGame}>
               Начать заново
             </button>
+            <button className="resetBtn" onClick={onStartPage} >На главную</button>
           </div>
         </div>
       </div>
     );
   } else {
+    onTimeOut()
     return (
       <>
         <FinishPage score={score}></FinishPage>
@@ -118,3 +128,4 @@ function Game() {
 }
 
 export default Game;
+  
