@@ -1,8 +1,9 @@
-// src/App.js
 import React, { useState, useEffect } from "react";
+// import { NavLink } from "react-router-dom";
+import FinishPage from "../FinishPage/FinishPage";
+
 import "./styles.css";
 import { getRandomFear } from "./Fears";
-import FinishPage from "../FinishPage/FinishPage";
 
 function Game() {
   //настройки сложности (вынесутся в отдельный файл)
@@ -10,12 +11,14 @@ function Game() {
   const CELLS = 9;
   //на сколько появляется страх в мс
   const TIME = 1500;
+  //время Игры в секундах
+  const gameTime = 15;
 
   //счет игры
   const [score, setScore] = useState(0);
 
   //отсчет времени
-  const [time, setTime] = useState(15);
+  const [time, setTime] = useState(gameTime);
 
   const [holes, setHoles] = useState(Array(CELLS).fill(null));
 
@@ -59,24 +62,17 @@ function Game() {
     }, 1000);
   };
 
-  // const deleteResult = () => {
-  //   setHoles([]);
-  // };
+  // а давай начнем сначала?
+  const resetGame = () => {
+    setTime(gameTime);
+    setScore(0);
+    setHoles(Array(CELLS).fill(null));
+  };
 
   if (time > 0) {
     return (
-      <div className="game-container" id="axis">
-        <img
-          src="../../../public/oblako.png"
-          alt=""
-          className="object van1 move-right"
-        />
-        <img
-          src="../../../public/oblako.png"
-          alt=""
-          className="object van2 move-left"
-        />
-        <h1 className="title-game">Победи свой страх!</h1>
+      <div className="game-container">
+        <h1>Fight with your fear</h1>
         <h2>Твои очки: {score}</h2>
         <h2>Time: {time}s</h2>
         <div className="game-area">
@@ -92,15 +88,15 @@ function Game() {
             ))}
           </div>
         </div>
+        <button onClick={resetGame}>Начать заново</button>
       </div>
     );
   } else {
     return (
-      <>
-        <FinishPage score={score} />
-        {/* <h2> Твои очки : {score}</h2> */}
-      </>
-    );
+    <>
+    <FinishPage score={score}></FinishPage>
+    </>
+    )
   }
 }
 
