@@ -2,6 +2,7 @@ import React from "react";
 import "../FinishPage/FinishPage.css";
 
 const FinishPage = (props) => {
+
   return (
     <div className="container-finish">
       <div className="scores">Твои очки: {props.score}</div>
