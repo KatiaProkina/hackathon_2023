@@ -19,7 +19,7 @@ const StartPage = () => {
       <img src="../../../public/oblako.png" alt="" className="oblako1" />
       <img src="../../../public/oblako.png" alt="" className="oblako2" />
       <div className="title-block">
-        <h1>Победитель страхов</h1>
+        <h1 className="name-game">Победитель страхов</h1>
 
         <img src={icon1} alt="" className="icon1" />
         {/* <img src={icon2} alt="" className="icon2" /> */}

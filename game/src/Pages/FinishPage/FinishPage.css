@@ -1,0 +1,25 @@
+.container-finish {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  background-image: url("../../../public/final_photo.jpeg");
+  opacity: 80%;
+}
+.scores {
+  display: flex;
+  color: white;
+  font-size: 68px;
+  z-index: 5;
+}
+
+.restart_btn {
+  color: white;
+  background-color: rgb(67, 180, 175);
+  border: none;
+  border-radius: 6px;
+  padding: 15px 35px;
+  font-size: 25px;
+}

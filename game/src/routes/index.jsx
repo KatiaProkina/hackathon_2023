@@ -1,6 +1,6 @@
 import { createBrowserRouter } from "react-router-dom";
 import FinishPage from "../Pages/FinishPage/FinishPage";
-import GamePage from "../Pages/GamePage/GamePage";
+import Game from "../Pages/Game/Game";
 import StartPage from "../Pages/StartPage/StartPage";
 
 export const router = createBrowserRouter([
@@ -13,7 +13,7 @@ export const router = createBrowserRouter([
       },
       {
         path: "/game",
-        element: <GamePage />,
+        element: <Game />,
       },
       {
         path: "/finish",

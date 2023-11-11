@@ -1,12 +1,12 @@
 import React from "react";
-import GamePage from "./GamePage/GamePage";
 import StartPage from "./StartPage/StartPage";
 import FinishPage from "./FinishPage/FinishPage";
+import Game from "./Game/Game";
 const MainPage = () => {
   return (
     <div>
       <StartPage />
-      <GamePage />
+      <Game />
       <FinishPage />
     </div>
   );
