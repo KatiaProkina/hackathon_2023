@@ -65,7 +65,7 @@
   height: 100%;
 }
 .fear:hover {
-  transform: scale(0.5);
+  transform: scale(1.5);
 }
 
 .scores-time-block {
