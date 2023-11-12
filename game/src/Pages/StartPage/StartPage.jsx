@@ -5,6 +5,18 @@ import icon2 from "../../../public/dragon.png";
 import icon3 from "../../../public/rainbow.png";
 import icon4 from "../../../public/unicorn.png";
 import "../StartPage/StartPage.css";
+import { useDisclosure } from "@chakra-ui/react";
+import {
+  Button,
+  Modal,
+  ModalOverlay,
+  ModalContent,
+  ModalHeader,
+  ModalCloseButton,
+  ModalBody,
+  ModalFooter,
+  Text,
+} from "@chakra-ui/react";
 
 const StartPage = () => {
   const navigate = useNavigate();
@@ -12,6 +24,8 @@ const StartPage = () => {
   const handleStart = () => {
     navigate("/game");
   };
+
+  const { isOpen, onOpen, onClose } = useDisclosure();
 
   return (
     <div className="container">
@@ -22,7 +36,7 @@ const StartPage = () => {
         <h1 className="name-game">Победитель страхов</h1>
 
         <img src={icon1} alt="" className="icon1" />
-        {/* <img src={icon2} alt="" className="icon2" /> */}
+
         <img src={icon3} alt="" className="icon3" />
         <img src={icon4} alt="" className="icon4" />
         <div className="title-description-game-block">
@@ -31,9 +45,35 @@ const StartPage = () => {
           больше очков наберешь. Удачи!
         </div>
       </div>
-      <button className="start-game-btn" onClick={handleStart}>
-        Начать игру
-      </button>
+      <div className="btn-group">
+        <>
+          <Button
+            onClick={onOpen}
+            backgroundColor="rgb(164, 224, 246)"
+            color="white"
+            border-radius=" 6px"
+            padding="15px 35px"
+            font-size="30px"
+            marginRight="25px"
+          >
+            Лучшие результаты
+          </Button>
+
+          <Modal isOpen={isOpen} onClose={onClose}>
+            <ModalOverlay />
+            <ModalContent>
+              <ModalHeader>ТОП игроков </ModalHeader>
+              <ModalCloseButton />
+              <ModalBody>
+                <Text />
+              </ModalBody>
+            </ModalContent>
+          </Modal>
+        </>
+        <button className="start-game-btn" onClick={handleStart}>
+          Начать игру
+        </button>
+      </div>
     </div>
   );
 };
