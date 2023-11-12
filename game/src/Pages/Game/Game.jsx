@@ -16,7 +16,7 @@ function Game() {
   //на сколько появляется страх в мс
   const TIME = 1500;
   //время Игры в секундах
-  const gameTime = 5;
+  const gameTime = 115;
 
   //счет игры
   const [score, setScore] = useState(0);
@@ -77,6 +77,7 @@ function Game() {
     return (
       <div id="axis">
         <div className="game-container">
+          <span className="soil"></span>
           <img
             src="../../../public/oblako.png"
             alt=""
@@ -109,6 +110,7 @@ function Game() {
           </div>
 
           <div className="game-area">
+            <span className="soil"></span>
             <div className="game-grid">
               {holes.map((fear, index) => (
                 <div

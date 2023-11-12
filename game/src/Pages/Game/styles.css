@@ -29,7 +29,7 @@
   pointer-events: none;
   /* отвечает за прозрачность элемента для прокликивания мышкой*/
   top: 0;
-  left: -10px;
+  left: 0;
 
   background: url("../../img/_dark2.png");
   background-repeat: no-repeat;
@@ -38,6 +38,40 @@
   background-size: contain;
   /* opacity: 0.5; */
 }
+
+.game-area::after {
+  content: "";
+  position: absolute;
+  pointer-events: none;
+  z-index: 2;
+  /* отвечает за прозрачность элемента для прокликивания мышкой*/
+  top: -220px;
+  left: -60px;
+  width: 820px;
+  height: 1010px;
+  background-size: contain;
+  background-image: url("../../img/roof.png");
+  background-repeat: no-repeat;
+}
+
+.soil {
+  content: "";
+  position: absolute;
+  pointer-events: none;
+  z-index: 2;
+  /* отвечает за прозрачность элемента для прокликивания мышкой*/
+  left: 50%;
+  translate: -55%;
+  width: 100vw;
+  height: 1010px;
+  background-size: contain;
+  background-image: url("../../img/soil.png");
+  background-repeat: no-repeat;
+  z-index: 5;
+  bottom: -130%;
+}
+
+
 
 .game-grid {
   display: grid;
@@ -59,7 +93,7 @@
     rgba(225, 188, 101, 0.838) 0%,
     rgb(116, 56, 200) 100%
   );
-  width: 115px;
+  width: 120px;
   height: 168px;
   display: flex;
   justify-content: center;
@@ -97,12 +131,21 @@
   height: 400px;
   top: -3%;
   left: -3%;
+  z-index: 5;
+  opacity: 0.5;
+  pointer-events: none;
+
+
 }
 .van2 {
   width: 600px;
   height: 400px;
   top: -3%;
   right: -3%;
+  z-index: 5;
+  opacity: 0.5;
+  pointer-events: none;
+
 }
 #axis:hover .move-right {
   transform: translate(500px, 0);
