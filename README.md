@@ -16,8 +16,9 @@ Back:
 
 - [ ] вывод поля с правилами игры и приглашением стартовать
 
+<img width="1510" alt="Снимок экрана 2023-11-12 в 15 55 23" src="https://github.com/KatiaProkina/hackathon_2023/assets/71662309/215ae772-fd1c-4973-b042-c5671cd1af9d">
 
-<img width="1506" alt="Снимок экрана 2023-11-11 в 14 53 15" src="https://github.com/KatiaProkina/hackathon_2023/assets/71662309/766a586d-6018-4449-9a94-4c72e8652eb2">
+
 
 
 - [ ] вывод поля со страхами, которые появляются и прячутся;
