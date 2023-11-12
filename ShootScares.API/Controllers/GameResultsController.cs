@@ -22,11 +22,13 @@ namespace ShootScares.API.Controllers
             var resultModels = new List<GameResultModel>();
             foreach (var result in results)
             {
-                var resultModel = new GameResultModel();
-                resultModel.Id = result.Id;
-                resultModel.PlayerId = result.PlayerId;
-                resultModel.Score = result.Score;
-                resultModel.Date = result.Date.ToString("HH:mm dd/MM/yy");
+                var resultModel = new GameResultModel
+                {
+                    Id = result.Id,
+                    PlayerId = result.PlayerId,
+                    Score = result.Score,
+                    Date = result.Date.ToString("HH:mm dd/MM/yy"),
+                };
                 resultModels.Add(resultModel);
             }
 
@@ -34,6 +36,8 @@ namespace ShootScares.API.Controllers
         }
 
         [HttpGet("{id}")]
+        [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(GameResultModel))]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
         public ActionResult<GameResultModel> GetById(int id)
         {
             var result = gameResultsRepository.Get(id).FirstOrDefault();
@@ -53,6 +57,8 @@ namespace ShootScares.API.Controllers
         }
 
         [HttpPost]
+        [ProducesResponseType(StatusCodes.Status201Created, Type = typeof(GameResultModel))]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public IActionResult Create(GameResultCreateModel model)
         {
             var added = gameResultsRepository.Add(new GameResult
@@ -66,11 +72,23 @@ namespace ShootScares.API.Controllers
             {
                 return BadRequest();
             }
+
+            var addedModel = new GameResultModel
+            {
+                Id = added.Id,
+                PlayerId = added.PlayerId,
+                Score = added.Score,
+                Date = added.Date.ToString("HH:mm dd/MM/yy")
+            };
+
             return CreatedAtAction(nameof(GetById),
-                new { id = added.Id}, added);
+                new { id = addedModel.Id }, addedModel);
         }
 
         [HttpDelete("{id}")]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        [ProducesResponseType(StatusCodes.Status204NoContent)]
+        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
         public IActionResult Delete(int id)
         {
             var result = gameResultsRepository.Get(id).FirstOrDefault();
