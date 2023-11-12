@@ -14,8 +14,11 @@ import {
   ModalHeader,
   ModalCloseButton,
   ModalBody,
-  ModalFooter,
-  Text,
+  Table,
+  Thead,
+  Tr,
+  Td,
+  Tbody,
 } from "@chakra-ui/react";
 
 const StartPage = () => {
@@ -26,6 +29,16 @@ const StartPage = () => {
   };
 
   const { isOpen, onOpen, onClose } = useDisclosure();
+
+  const getUser = async () => {
+    try {
+      const response = await fetch("https://localhost:44365/api/LeaderBoard");
+      const json = await response.json;
+      return json;
+    } catch (er) {
+      console.log(er);
+    }
+  };
 
   return (
     <div className="container">
@@ -65,7 +78,26 @@ const StartPage = () => {
               <ModalHeader>ТОП игроков </ModalHeader>
               <ModalCloseButton />
               <ModalBody>
-                <Text />
+                <Table>
+                  <Thead>
+                    <Tr>
+                      <Td>Имя</Td>
+                      <Td>Счет</Td>
+                      <Td>Дата</Td>
+                    </Tr>
+                  </Thead>
+                  <Tbody>
+                    {getUser.map((user) => {
+                      return (
+                        <Tr key={user.id}>
+                          <Td>{user.name}</Td>
+                          <Td>{user.score}</Td>
+                          <Td>{user.date}</Td>
+                        </Tr>
+                      );
+                    })}
+                  </Tbody>
+                </Table>
               </ModalBody>
             </ModalContent>
           </Modal>
