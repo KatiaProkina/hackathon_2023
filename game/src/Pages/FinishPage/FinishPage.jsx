@@ -1,11 +1,12 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import "./FinishPage.css";
 import { useNavigate } from "react-router-dom";
 import axios from 'axios'
 
 const FinishPage = ({ score }) => {
   const navigate = useNavigate();
-  const [username, setUsername] = useState(""); // Состояние для имени пользователя
+  // Состояние для имени пользователя
+  const [username, setUsername] = useState(""); 
 
   const onClickHandler = () => {
     // Перейти обратно на главную
@@ -36,8 +37,12 @@ const FinishPage = ({ score }) => {
   return (
     <div className="container-finish">
       <div className="scores">Твои очки: {score}</div>
+      <button type="button" onClick={onClickHandler} className="restart_btn">
+          Начать заново
+        </button>
       {/* Добавляем форму для ввода имени пользователя */}
-      <div>
+
+      <div className="form_wrapper">
       <form className="form">
         <label>
           Имя пользователя:
@@ -49,11 +54,10 @@ const FinishPage = ({ score }) => {
         </label>
         
       </form>
-        <button type="button" onClick={onClickHandler} className="restart_btn">
-          Начать заново
-        </button>
-        <button type="button" onClick={sendResultHandler} className="restart_btn">
-          отправить результат
+
+
+        <button type="button" onClick={sendResultHandler} className="server_btn">
+          Отправить результат
         </button>
       </div>
     </div>

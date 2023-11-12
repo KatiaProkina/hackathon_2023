@@ -36,3 +36,85 @@
   padding: 8px 10px;
 }
 
+.container-finish {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  background-image: url("../../../public/final_photo.jpeg");
+  opacity: 80%;
+}
+.scores {
+  display: flex;
+  color: white;
+  font-size: 68px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.9);
+  z-index: 5;
+}
+
+.restart_btn {
+  color: white;
+  background-color: rgb(67, 180, 175);
+  border: none;
+  border-radius: 6px;
+  padding: 15px 35px;
+  font-size: 25px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+
+  transition: all 0.3s ease;
+}
+
+.restart_btn:hover {
+  background-color: rgb(51, 137, 132);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+
+}
+
+.form_wrapper {
+  background: rgba(255, 255,255, 0.4);
+  padding: 2em;
+  border-radius: 2em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding: 20px;
+  color: #333;
+  font-size: 2em;
+}
+
+.form input {
+  width: 10em;
+  height: 2em;
+  padding: 1px 1.5em;
+  font-size: 1.2em;
+  border-radius: 0.5em;
+  border: none;
+  margin-left: 2em;
+}
+
+.server_btn {
+  border: none;
+  color: white;
+  border-radius: 6px;
+  padding: 15px 35px;
+  font-size: 25px;
+  width: max-content;
+  background-color: rgb(67, 116, 180);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+
+  transition: all 0.3s ease;  
+}
+
+.server_btn:hover {
+  background-color: rgb(47, 81, 124);  
+}
