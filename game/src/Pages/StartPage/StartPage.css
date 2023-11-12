@@ -42,6 +42,9 @@ body {
   font-weight: 600;
   font-size: 25px;
 }
+.start-game-btn:hover {
+  background-color: rgb(128, 176, 194);
+}
 .icon1 {
   position: absolute;
   height: 300px;
