@@ -19,13 +19,19 @@ const FinishPage = ({ score }) => {
   }
 
 
+
   const sendResultsToServer = async (username, score) => {
     try {
+      // Проверяем, если score пустой или равен 0, устанавливаем score в 0
+      if (!score || score === 0) {
+        score = 0;
+      }
+  
       const response = await axios.post("https://localhost:44365/api/players/", {
         username: username,
         score: score,
       });
-
+  
       // Выводим данные из ответа в консоль
       console.log("Данные успешно отправлены на сервер:", response.data);
     } catch (error) {

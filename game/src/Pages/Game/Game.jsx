@@ -16,7 +16,7 @@ function Game() {
   //на сколько появляется страх в мс
   const TIME = 1500;
   //время Игры в секундах
-  const gameTime = 15;
+  const gameTime = 5;
 
   //счет игры
   const [score, setScore] = useState(0);

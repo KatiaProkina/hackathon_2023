@@ -29,6 +29,8 @@
   pointer-events: none;
   /* отвечает за прозрачность элемента для прокликивания мышкой*/
   top: 0;
+  left: -10px;
+
 
   background: url("../../img/_dark2.png");
   background-repeat: no-repeat;
@@ -40,9 +42,9 @@
 
 .game-grid {
   display: grid;
-  grid-template-columns: repeat(3, 200px);
+  grid-template-columns: repeat(3, 205px);
   /* Заданные размеры окон */
-  row-gap: 50px;
+  row-gap: 65px;
   column-gap: 25px;
 
   padding: 20px;
@@ -52,7 +54,8 @@
 }
 
 .hole {
-  background-color: #fff;
+  background: rgb(240, 230, 206);
+background: radial-gradient(circle, rgba(225, 188, 101, 0.838) 0%, rgb(116, 56, 200) 100%);
   width: 115px;
   height: 168px;
   display: flex;
