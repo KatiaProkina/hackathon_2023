@@ -51,10 +51,17 @@ Back:
 
 - [ ]  лидерборд (топ игроков и лучших партий);
 
+<img width="273" alt="Снимок экрана 2023-11-12 в 16 54 40" src="https://github.com/KatiaProkina/hackathon_2023/assets/71662309/580364f3-bfb8-4aa5-a361-631575e2c2c9">
+
+
+
+<img width="518" alt="Снимок экрана 2023-11-12 в 16 54 48" src="https://github.com/KatiaProkina/hackathon_2023/assets/71662309/fcd5df33-e11d-4346-87e1-1fe701bf3498">
+
+
 Инструкция, как развернуть проект локально: 
 
 Через папку game запускаем команду npm run dev
 
 Ссылка на деплой: 
 
-
+https://hackathon-2023-p9o3.vercel.app/
