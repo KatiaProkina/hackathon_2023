@@ -23,3 +23,16 @@
   padding: 15px 35px;
   font-size: 25px;
 }
+
+.form {
+  padding: 20px;
+  color: white;
+  font-size: 2em;
+}
+
+.form input {
+  width: 10em;
+  height: 2em;
+  padding: 8px 10px;
+}
+

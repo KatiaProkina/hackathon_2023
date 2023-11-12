@@ -117,7 +117,7 @@ function Game() {
       </div>
     );
   } else {
-    onTimeOut();
+   return <FinishPage score={score}></FinishPage>
   }
 }
 
