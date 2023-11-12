@@ -12,9 +12,9 @@ function Game() {
 
   //настройки сложности (вынесутся в отдельный файл)
   // кол-во ячеек (кратно 3м)
-  const CELLS = 9;
+  const cells = 9;
   //на сколько появляется страх в мс
-  const TIME = 1500;
+  const fearTime = 1500;
   //время Игры в секундах
   const gameTime = 15;
 
@@ -24,12 +24,12 @@ function Game() {
   //отсчет времени
   const [time, setTime] = useState(gameTime);
 
-  const [holes, setHoles] = useState(Array(CELLS).fill(null));
+  const [holes, setHoles] = useState(Array(cells).fill(null));
 
   useEffect(() => {
     const holeInterval = setInterval(() => {
       showHole();
-    }, TIME);
+    }, fearTime);
 
     return () => clearInterval(holeInterval);
   }, []);
@@ -70,7 +70,7 @@ function Game() {
   const resetGame = () => {
     setTime(gameTime);
     setScore(0);
-    setHoles(Array(CELLS).fill(null));
+    setHoles(Array(cells).fill(null));
   };
 
   if (time > 0) {
