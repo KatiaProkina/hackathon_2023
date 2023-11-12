@@ -21,6 +21,7 @@ import {
   Td,
   Tbody,
 } from "@chakra-ui/react";
+import data from "../../MOCK_DATA.json";
 
 const StartPage = () => {
   const navigate = useNavigate();
@@ -93,7 +94,7 @@ const StartPage = () => {
                     </Tr>
                   </Thead>
                   <Tbody>
-                    {leaderboard.map((user) => {
+                    {data.map((user) => {
                       return (
                         <Tr key={user.id}>
                           <Td>{user.username}</Td>
