@@ -19,6 +19,16 @@ builder.Services.AddDbContext<GameDbContext>(options =>
 builder.Services.AddScoped<PlayersRepository> ();
 builder.Services.AddScoped<GameResultsRepository> ();
 
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("ReactPolicy", builder =>
+    {
+        builder.WithOrigins("http://localhost:5173")
+        .AllowAnyMethod()
+        .AllowAnyHeader();
+    });
+});
+
 
 var app = builder.Build();
 
@@ -29,6 +39,8 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+
+app.UseCors("ReactPolicy");
 
 app.UseAuthorization();
 
