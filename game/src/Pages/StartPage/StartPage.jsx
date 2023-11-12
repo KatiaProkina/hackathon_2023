@@ -3,6 +3,8 @@ import { useNavigate } from "react-router-dom";
 import icon1 from "../../../public/fairy.png";
 import icon3 from "../../../public/rainbow.png";
 import icon4 from "../../../public/unicorn.png";
+import rainbow from "../../../public/rainbow_big.png";
+import cloud from "../../../public/oblako.png";
 import "../StartPage/StartPage.css";
 import { useDisclosure } from "@chakra-ui/react";
 import {
@@ -46,9 +48,9 @@ const StartPage = () => {
 
   return (
     <div className="container">
-      <img src="../../../public/rainbow_big.png" alt="" className="rainbow" />
-      <img src="../../../public/oblako.png" alt="" className="oblako1" />
-      <img src="../../../public/oblako.png" alt="" className="oblako2" />
+      <img src={rainbow} alt="" className="rainbow" />
+      <img src={cloud} className="oblako1" />
+      <img src={cloud} alt="" className="oblako2" />
       <div className="title-block">
         <h1 className="name-game">Победитель страхов</h1>
 

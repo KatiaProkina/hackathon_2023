@@ -1,7 +1,7 @@
 import { useState, useEffect, useContext } from "react";
 import FinishPage from "../FinishPage/FinishPage";
 import { useNavigate } from "react-router-dom";
-
+import cloud from "../../../public/oblako.png";
 import "./styles.css";
 import { getRandomFear } from "./Fears";
 
@@ -78,16 +78,8 @@ function Game() {
       <div id="axis">
         <div className="game-container">
           <span className="soil"></span>
-          <img
-            src="../../../public/oblako.png"
-            alt=""
-            className="object van1 move-right"
-          />
-          <img
-            src="../../../public/oblako.png"
-            alt=""
-            className="object van2 move-left"
-          />
+          <img src={cloud} alt="" className="object van1 move-right" />
+          <img src={cloud} alt="" className="object van2 move-left" />
           <div className="scares-description">
             <h3>Описание страхов:</h3>
             <ul className="scares-list">
