@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import icon1 from "../../../public/fairy.png";
 import icon2 from "../../../public/dragon.png";
@@ -29,16 +29,21 @@ const StartPage = () => {
   };
 
   const { isOpen, onOpen, onClose } = useDisclosure();
+  const [leaderboard, setLeaderboard] = useState([]);
 
-  const getUser = async () => {
-    try {
-      const response = await fetch("https://localhost:44365/api/LeaderBoard");
-      const json = await response.json;
-      return json;
-    } catch (er) {
-      console.log(er);
-    }
-  };
+  useEffect(() => {
+    const fetchLeaderboard = async () => {
+      try {
+        const response = await fetch("https://localhost:44365/api/LeaderBoard");
+        const json = await response.json();
+        setLeaderboard(json);
+      } catch (error) {
+        console.log(error);
+      }
+    };
+
+    fetchLeaderboard();
+  }, []);
 
   return (
     <div className="container">
@@ -87,7 +92,7 @@ const StartPage = () => {
                     </Tr>
                   </Thead>
                   <Tbody>
-                    {getUser.map((user) => {
+                    {leaderboard.map((user) => {
                       return (
                         <Tr key={user.id}>
                           <Td>{user.name}</Td>
