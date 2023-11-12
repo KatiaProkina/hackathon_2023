@@ -6,7 +6,7 @@
 Стек проекта:
 Front - React Vite, React Router,Chakra Ui
 
-Back: 
+Back: ASP.NET, C#, MS SQL Server
 
 Наш прект: игра Shoot Children' Scares
 
