@@ -131,7 +131,7 @@ function Game() {
             <button className="resetBtn" onClick={resetGame}>
               Начать заново
             </button>
-            <button className="resetBtn" onClick={onStartPage}>
+            <button className="resetBtn btnPage" onClick={onStartPage}>
               На главную
             </button>
           </div>

@@ -71,8 +71,6 @@
   bottom: -130%;
 }
 
-
-
 .game-grid {
   display: grid;
   grid-template-columns: repeat(3, 205px);
@@ -119,6 +117,9 @@
   background-color: rgb(72, 117, 191);
   font-weight: 800;
 }
+.btnPage {
+  margin-left: 10px;
+}
 
 .object {
   position: absolute;
@@ -134,8 +135,6 @@
   z-index: 5;
   opacity: 0.5;
   pointer-events: none;
-
-
 }
 .van2 {
   width: 600px;
@@ -145,7 +144,6 @@
   z-index: 5;
   opacity: 0.5;
   pointer-events: none;
-
 }
 #axis:hover .move-right {
   transform: translate(500px, 0);
