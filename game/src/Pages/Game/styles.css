@@ -1,18 +1,18 @@
-/* src/App.css */
-/* src/App.css */
+
 .game-container {
   position: relative;
   display: flex;
   align-items: center;
   flex-direction: row;
   justify-content: center;
-  height: 130vh;
+  height: 120vh;
   gap: 20px;
   padding-bottom: 300px;
 
   margin: 0;
   background: linear-gradient(45deg, rgb(29, 30, 84) 46%, rgb(38, 64, 105) 80%);
   text-align: center;
+  cursor: cell;
 }
 
 .game-area {
@@ -20,7 +20,6 @@
   flex-direction: column;
   align-items: center;
   position: relative;
-  cursor: url(../../../public/cursor.png), auto;
 }
 
 .game-area::before {
@@ -54,27 +53,27 @@
   background-repeat: no-repeat;
 }
 
-.soil {
-  content: "";
+.game-footer {
   position: absolute;
   pointer-events: none;
   z-index: 2;
   /* отвечает за прозрачность элемента для прокликивания мышкой*/
   left: 50%;
   translate: -55%;
-  width: 100vw;
-  height: 1010px;
-  background-size: contain;
-  background-image: url("../../img/soil.png");
+  width: 140%;
+  height: 340px;
+  background-size: cover;
+  background-image: url("../../img/soil2.png");
   background-repeat: no-repeat;
   z-index: 5;
-  bottom: -130%;
+  bottom: 0;
+  transform: translate(20px, 235px);
 }
+
 
 .game-grid {
   display: grid;
   grid-template-columns: repeat(3, 205px);
-  /* Заданные размеры окон */
   row-gap: 65px;
   column-gap: 25px;
 
@@ -117,9 +116,6 @@
   background-color: rgb(72, 117, 191);
   font-weight: 800;
 }
-.btnPage {
-  margin-left: 10px;
-}
 
 .object {
   position: absolute;
@@ -135,6 +131,8 @@
   z-index: 5;
   opacity: 0.5;
   pointer-events: none;
+
+
 }
 .van2 {
   width: 600px;
@@ -144,6 +142,7 @@
   z-index: 5;
   opacity: 0.5;
   pointer-events: none;
+
 }
 #axis:hover .move-right {
   transform: translate(500px, 0);

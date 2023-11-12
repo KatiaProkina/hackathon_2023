@@ -16,7 +16,7 @@ function Game() {
   //на сколько появляется страх в мс
   const TIME = 1500;
   //время Игры в секундах
-  const gameTime = 15;
+  const gameTime = 95;
 
   //счет игры
   const [score, setScore] = useState(0);
@@ -73,6 +73,24 @@ function Game() {
     setHoles(Array(CELLS).fill(null));
   };
 
+//-------------- бесконечная игра ------------------
+// const [infiniteGame, setInfiniteGame] = useState(false);
+
+// const toggleInfiniteGame = () => {
+//   setInfiniteGame((prev) => !prev);
+//   console.log(infiniteGame)
+//   resetGame(); // Сбрасываем игру при каждом переключении
+// };
+
+// useEffect(() => {
+//   if (!infiniteGame && time === 0) {
+//     return <FinishPage score={score} />
+//   }
+// }, [infiniteGame, time]);
+
+//------------------------------------------------------
+
+
   if (time > 0) {
     return (
       <div id="axis">
@@ -110,7 +128,7 @@ function Game() {
           </div>
 
           <div className="game-area">
-            <span className="soil"></span>
+            {/* <p className="soil"></p> */}
             <div className="game-grid">
               {holes.map((fear, index) => (
                 <div
@@ -123,8 +141,12 @@ function Game() {
                   )}
                 </div>
               ))}
+              <footer className="game-footer"></footer>
+
             </div>
           </div>
+
+          
           <div className="scores-time-block">
             <h2>Твои очки: {score}</h2>
             <h2>Time: {time}s</h2>
@@ -135,7 +157,32 @@ function Game() {
               На главную
             </button>
           </div>
+        
+        
+
+          {/* <div className="scores-time-block">
+          <h2>Твои очки: {score}</h2>
+          <h2>Time: {infiniteGame ? "∞" : `${time}s`}</h2>
+          <button className="resetBtn" onClick={resetGame}>
+            Начать заново
+          </button>
+          <button className="resetBtn btnPage" onClick={onStartPage}>
+            На главную
+          </button>
+         
+         
+          <div>
+          <button className="resetBtn" onClick={toggleInfiniteGame}>
+            {infiniteGame ? "Завершить бесконечную игру" : "Бесконечная игра"}
+          </button>
+          </div>
+
+
+        </div> */}
+          {/* <footer className="game-footer"></footer> */}
+
         </div>
+
       </div>
     );
   } else {
