@@ -52,8 +52,8 @@ const StartPage = () => {
             backgroundColor="rgb(164, 224, 246)"
             color="white"
             border-radius=" 6px"
-            padding="15px 35px"
-            font-size="30px"
+            padding={10}
+            fontSize="25px"
             marginRight="25px"
           >
             Лучшие результаты
