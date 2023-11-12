@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import icon1 from "../../../public/fairy.png";
-import icon2 from "../../../public/dragon.png";
 import icon3 from "../../../public/rainbow.png";
 import icon4 from "../../../public/unicorn.png";
 import "../StartPage/StartPage.css";
@@ -95,7 +94,7 @@ const StartPage = () => {
                     {leaderboard.map((user) => {
                       return (
                         <Tr key={user.id}>
-                          <Td>{user.name}</Td>
+                          <Td>{user.username}</Td>
                           <Td>{user.score}</Td>
                           <Td>{user.date}</Td>
                         </Tr>
