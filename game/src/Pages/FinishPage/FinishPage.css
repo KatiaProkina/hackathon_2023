@@ -69,11 +69,10 @@
 .restart_btn:hover {
   background-color: rgb(51, 137, 132);
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-
 }
 
 .form_wrapper {
-  background: rgba(255, 255,255, 0.4);
+  background: rgba(255, 255, 255, 0.4);
   padding: 2em;
   border-radius: 2em;
   display: flex;
@@ -104,17 +103,17 @@
 
 .server_btn {
   border: none;
-  color: red;
+  color: white;
   border-radius: 6px;
   padding: 15px 35px;
   font-size: 25px;
   width: max-content;
-  background-color: rgb(67, 116, 180);
+  background-color: rgb(67, 180, 175);
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 
-  transition: all 0.3s ease;  
+  transition: all 0.3s ease;
 }
 
 .server_btn:hover {
-  background-color: rgb(47, 81, 124);  
+  background-color: rgb(51, 137, 132);
 }
