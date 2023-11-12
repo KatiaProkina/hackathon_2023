@@ -20,7 +20,7 @@
   flex-direction: column;
   align-items: center;
   position: relative;
-  cursor: cell;
+  cursor: url(../../../public/cursor.png), auto;
 }
 
 .game-area::before {

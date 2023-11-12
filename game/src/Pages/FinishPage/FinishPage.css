@@ -117,3 +117,9 @@
 .server_btn:hover {
   background-color: rgb(51, 137, 132);
 }
+.congratulation {
+  color: white;
+  font-size: 75px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.9);
+  z-index: 5;
+}

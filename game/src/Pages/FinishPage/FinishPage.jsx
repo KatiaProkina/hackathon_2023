@@ -44,6 +44,7 @@ const FinishPage = ({ score }) => {
 
   return (
     <div className="container-finish">
+      <div className="congratulation">Поздравляем!</div>
       <div className="scores">Твои очки: {score}</div>
       <button type="button" onClick={onClickHandler} className="restart_btn">
         Начать заново
