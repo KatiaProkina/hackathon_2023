@@ -47,17 +47,11 @@ body {
 }
 .icon1 {
   position: absolute;
-  height: 300px;
+  height: 330px;
   width: 280px;
   left: -270px;
-  /* top: 300px; */
-  /* left: 300px; */
 }
-/* .icon2 {
-  position: absolute;
-  height: 50px;
-  width: 50px;
-} */
+
 .icon3 {
   position: absolute;
   height: 80px;
