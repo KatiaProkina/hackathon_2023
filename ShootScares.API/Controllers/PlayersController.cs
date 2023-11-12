@@ -11,9 +11,12 @@ namespace ShootScares.API.Controllers
     public class PlayersController : ControllerBase
     {
         private readonly PlayersRepository playersRepository;
-        public PlayersController(PlayersRepository playersRepository)
+        private readonly GameResultsRepository gameResultsRepository;
+        public PlayersController(PlayersRepository playersRepository,
+            GameResultsRepository gameResultsRepository)
         {
             this.playersRepository = playersRepository;
+            this.gameResultsRepository = gameResultsRepository;
         }
 
         [HttpGet]
@@ -81,18 +84,28 @@ namespace ShootScares.API.Controllers
         [HttpPost]
         [ProducesResponseType(StatusCodes.Status201Created, Type = typeof(PlayerModel))]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        public IActionResult Create([FromBody] string name)
+        public IActionResult Create([FromBody] PlayerCreateModel model)
         {
-            if (string.IsNullOrEmpty(name))
+            var player = playersRepository.Add(new Player { Name = model.Username });
+            var result = gameResultsRepository.Add(new GameResult
             {
-                return BadRequest();
-            }
+                PlayerId = player.Id,
+                Score = model.Score,
+                Date = DateTime.Now
+            });
+            var resultModel = new GameResultModel
+            {
+                Id = result.Id,
+                PlayerId = player.Id,
+                Score = result.Score,
+                Date = result.Date.ToString("HH:mm dd/MM/yy")
+            };
 
-            var player = playersRepository.Add(new Player { Name = name });
-            var model = new PlayerModel { Id = player.Id, Name = player.Name};
+            var returnModel = new PlayerModel { Id = player.Id, Name = player.Name };
+            returnModel.Results.Add(resultModel);
 
-            return CreatedAtAction(nameof(GetById), 
-                new { id = model.Id }, model);
+            return CreatedAtAction(nameof(GetById),
+                new { id = returnModel.Id }, returnModel);
         }
 
         [HttpPut("{id}")]
@@ -140,7 +153,7 @@ namespace ShootScares.API.Controllers
                 return NoContent();
             }
 
-            return StatusCode(StatusCodes.Status500InternalServerError, 
+            return StatusCode(StatusCodes.Status500InternalServerError,
                 "Failed to delete the player.");
         }
     }
