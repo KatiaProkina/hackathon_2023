@@ -7,14 +7,14 @@ import { getRandomFear } from "./Fears";
 
 function Game() {
   const navigate = useNavigate();
-  const onTimeOut = () => navigate("/finish");
+
   const onStartPage = () => navigate("/");
 
   //настройки сложности (вынесутся в отдельный файл)
   // кол-во ячеек (кратно 3м)
-  const cells = 9;
+  const CELLS = 9;
   //на сколько появляется страх в мс
-  const fearTime = 1500;
+  const TIME = 1500;
   //время Игры в секундах
   const gameTime = 15;
 
@@ -24,12 +24,12 @@ function Game() {
   //отсчет времени
   const [time, setTime] = useState(gameTime);
 
-  const [holes, setHoles] = useState(Array(cells).fill(null));
+  const [holes, setHoles] = useState(Array(CELLS).fill(null));
 
   useEffect(() => {
     const holeInterval = setInterval(() => {
       showHole();
-    }, fearTime);
+    }, TIME);
 
     return () => clearInterval(holeInterval);
   }, []);
@@ -70,7 +70,7 @@ function Game() {
   const resetGame = () => {
     setTime(gameTime);
     setScore(0);
-    setHoles(Array(cells).fill(null));
+    setHoles(Array(CELLS).fill(null));
   };
 
   if (time > 0) {
@@ -87,6 +87,26 @@ function Game() {
             alt=""
             className="object van2 move-left"
           />
+          <div className="scares-description">
+            <h3>Описание страхов:</h3>
+            <ul className="scares-list">
+              <li>Акула - существо, символизирующее страх предательства.</li>
+              <li>
+                Грозный воин - Этот враг олицетворяет страх насилия. Грозный
+                воин,олицетворяющий борьбу с прошлым травматическим опытом.
+              </li>
+              <li>
+                Скелет - призрачная фигура, олицетворяющая страх одиночества.
+              </li>
+              <li>
+                Ведьма - магическая сущность, олицетворяющая страх перед
+                исчезновением матери.
+              </li>
+              <li>
+                Робот - грозный враг-робот,символизирующий страх перед врачами.
+              </li>
+            </ul>
+          </div>
 
           <div className="game-area">
             <div className="game-grid">
@@ -117,7 +137,7 @@ function Game() {
       </div>
     );
   } else {
-   return <FinishPage score={score}></FinishPage>
+    return <FinishPage score={score} />;
   }
 }
 
