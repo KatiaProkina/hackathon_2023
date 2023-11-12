@@ -94,7 +94,7 @@ const StartPage = () => {
                     </Tr>
                   </Thead>
                   <Tbody>
-                    {data.map((user) => {
+                    {data.slice(0, 5).map((user) => {
                       return (
                         <Tr key={user.id}>
                           <Td>{user.username}</Td>
