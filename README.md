@@ -16,33 +16,35 @@ Back:
 
 - [ ] вывод поля с правилами игры и приглашением стартовать
 
-<img width="1512" alt="Снимок экрана 2023-11-12 в 14 28 12" src="https://github.com/KatiaProkina/hackathon_2023/assets/71662309/fb77d0b5-5ff3-4db9-aa08-6f84e4a61906">
+
+<img width="1506" alt="Снимок экрана 2023-11-11 в 14 53 15" src="https://github.com/KatiaProkina/hackathon_2023/assets/71662309/766a586d-6018-4449-9a94-4c72e8652eb2">
 
 
 - [ ] вывод поля со страхами, которые появляются и прячутся;
 
 
-<img width="1498" alt="Снимок экрана 2023-11-12 в 14 28 50" src="https://github.com/KatiaProkina/hackathon_2023/assets/71662309/d7a09e62-aef4-4455-8624-e2ae9ae771fc">
+<img width="1498" alt="Снимок экрана 2023-11-12 в 14 28 50" src="https://github.com/KatiaProkina/hackathon_2023/assets/71662309/f7db9f19-360d-4c60-96d6-e0402d0a6f16">
 
     
 - [ ] возможность "отстреливать" страхи, при попадании они исчезают с анимацией, которая маркирует попадание;
 
-![preview](https://github.com/KatiaProkina/hackathon_2023/assets/71662309/e5e22b10-6317-411a-80a6-2d32cee71eca)
+![preview](https://github.com/KatiaProkina/hackathon_2023/assets/71662309/fa797bec-c1b9-40d0-bae7-ae6e0a9fed99)
+
 
     
 - [ ] возможность начать игру заново;
 
+<img width="377" alt="Снимок экрана 2023-11-12 в 14 33 58" src="https://github.com/KatiaProkina/hackathon_2023/assets/71662309/1ac88e66-cb2e-49d2-ab26-c3a2ed009061">
 
-  <img width="377" alt="Снимок экрана 2023-11-12 в 14 33 58" src="https://github.com/KatiaProkina/hackathon_2023/assets/71662309/18ad3a93-8f7d-42d5-8bf0-2fdd53cd2f54">
 
 - [ ] экран поздравления с окончанием игры + количество очков;
 
-<img width="1170" alt="Снимок экрана 2023-11-12 в 14 41 36" src="https://github.com/KatiaProkina/hackathon_2023/assets/71662309/bf3d59d9-72ed-4056-9165-06ba66eb48f1">
+<img width="1170" alt="Снимок экрана 2023-11-12 в 14 41 36" src="https://github.com/KatiaProkina/hackathon_2023/assets/71662309/5ccd6146-b6db-45d6-91f9-be9abd1ee83b">
 
     
 - [ ] "легенда" с описанием: какая иконка соответствует какому страху;
 
-<img width="440" alt="Снимок экрана 2023-11-12 в 14 42 15" src="https://github.com/KatiaProkina/hackathon_2023/assets/71662309/d0bea6c0-c479-475e-9dcc-cb4115e958ea">
+<img width="440" alt="Снимок экрана 2023-11-12 в 14 42 15" src="https://github.com/KatiaProkina/hackathon_2023/assets/71662309/fe2663a4-b9e1-45c2-95c0-c156d3d106f2">
 
 Возможности для расширения:
 
