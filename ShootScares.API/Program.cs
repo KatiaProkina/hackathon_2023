@@ -1,34 +1,10 @@
 using Microsoft.EntityFrameworkCore;
 using ShootScares.API.Data;
 using ShootScares.API.Domain;
-using ShootScares.API.Controllers;
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.AddControllers();
-
-builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
-
-builder.Services.AddDbContext<GameDbContext>(options =>
-{
-    options.UseSqlServer(builder.Configuration
-        .GetConnectionString("GameDb"));
-});
-
-builder.Services.AddScoped<PlayersRepository> ();
-builder.Services.AddScoped<GameResultsRepository> ();
-
-builder.Services.AddCors(options =>
-{
-    options.AddPolicy("ReactPolicy", builder =>
-    {
-        builder.WithOrigins("http://localhost:5173")
-        .AllowAnyMethod()
-        .AllowAnyHeader();
-    });
-});
-
+ConfigureServices(builder);
 
 var app = builder.Build();
 
@@ -47,3 +23,29 @@ app.UseAuthorization();
 app.MapControllers();
 
 app.Run();
+
+void ConfigureServices(WebApplicationBuilder builder)
+{
+    builder.Services.AddControllers();
+    builder.Services.AddEndpointsApiExplorer();
+    builder.Services.AddSwaggerGen();
+
+    builder.Services.AddDbContext<GameDbContext>(options =>
+    {
+        options.UseSqlServer(builder.Configuration
+            .GetConnectionString("GameDb"));
+    });
+
+    builder.Services.AddScoped<PlayersRepository>();
+    builder.Services.AddScoped<GameResultsRepository>();
+
+    builder.Services.AddCors(options =>
+    {
+        options.AddPolicy("ReactPolicy", builder =>
+        {
+            builder.WithOrigins("https://hackathon-2023-p9o3.vercel.app")
+            .AllowAnyMethod()
+            .AllowAnyHeader();
+        });
+    });
+}
